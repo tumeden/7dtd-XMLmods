@@ -1,0 +1,50 @@
+<Configs>
+
+	<set xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/property[@class='Action0']/property[@name='Range']/@value">2.9</set>
+	<set xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/property[@class='Action1']/property[@name='Range']/@value">2.9</set>
+		
+	<append xpath="/items/item[@name='meleeWpnSpearT1IronSpear']">
+		<property class="Action0">
+			<property name="Class" value="DynamicMelee"/>
+			<property name="Range" value="2.9"/>
+			<property name="Hitmask_override" value="Melee"/>
+			<property name="Sphere" value=".05"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+			<property name="Sound_start" value="spear_fire"/>
+			<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+			<property name="UseGrazingHits" value="true"/>
+			<property name="GrazeStart" value=".25"/>
+			<property name="GrazeEnd" value=".32"/>
+			<property name="SwingDegrees" value="10"/>
+			<property name="SwingAngle" value="20"/>
+			<property class="HitSounds">
+				<property name="Override0" value="organic" param1="metalstaborganic"/>
+			</property>
+			<property class="GrazeSounds">
+				<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+			</property>
+		</property>
+    </append>
+	
+	<append xpath="/items/item[@name='meleeWpnSpearT3SteelSpear']">
+		<property class="Action0">
+			<property name="Class" value="DynamicMelee"/>
+			<property name="Range" value="2.9"/>
+			<property name="Hitmask_override" value="Melee"/>
+			<property name="Sphere" value=".05"/> <!-- limit to 0.15, else the sphere cast can overlap the target already -->
+			<property name="Sound_start" value="spear_fire"/>
+			<property name="ToolCategory.harvestingTools" value="1" param1="1"/>
+			<property name="UseGrazingHits" value="true"/>
+			<property name="GrazeStart" value=".25"/>
+			<property name="GrazeEnd" value=".32"/>
+			<property name="SwingDegrees" value="10"/>
+			<property name="SwingAngle" value="20"/>
+			<property class="HitSounds">
+				<property name="Override0" value="organic" param1="metalstaborganic"/>
+			</property>
+			<property class="GrazeSounds">
+				<property name="Override0" value="organic" param1="metalgrazeorganic"/>
+			</property>
+		</property>
+    </append>
+	
+</Configs>

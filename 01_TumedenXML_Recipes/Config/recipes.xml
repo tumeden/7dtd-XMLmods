@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tumeden>
+
+		<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Custom recipes
+							                                                                                   -->
+	<!-- Vehicle Wheels -->
+		<append xpath="/recipes">
+		<recipe name="vehicleWheels" count="1" craft_area="campfire" tags="perkGreaseMonkey,learnable">
+		<ingredient name="resourceForgedIron" count="2"/>
+		<ingredient name="resourceScrapPolymers" count="16"/>
+		<ingredient name="resourceWood" count="48"/>
+		<ingredient name="resourceAcid" count="1"/>
+		<ingredient name="ammoGasCan" count="1"/>
+		</recipe>
+		</append>
+
+	<!-- Battery acid -->
+		<append xpath="/recipes">
+		<recipe name="resourceAcid" count="1" craft_time="30" craft_area="chemistryStation" >
+		<ingredient name="resourceScrapPolymers" count="12"/>
+		<ingredient name="carBattery" count="1"/>
+		</recipe>
+		</append>
+
+	<!-- Battery acid -->
+		<append xpath="/recipes">
+		<recipe name="resourceAcid" count="1" craft_time="120" craft_area="campfire" craft_tool="toolCookingPot" tags="perkAdvancedEngineering">
+		<ingredient name="resourceScrapPolymers" count="50"/>
+		<ingredient name="resourceCoal" count="25"/>
+		<ingredient name="drinkJarRiverWater" count="2"/>
+		<ingredient name="drugSteroids" count="1"/>
+		</recipe>
+		</append>		
+
+	<!--  SewingKit -->
+		<append xpath="/recipes">
+		<recipe name="resourceSewingKit" count="1" craft_time="10" craft_area="workbench">
+		<ingredient name="resourceNail" count="1"/>
+		<ingredient name="casinoCoin" count="1"/>
+		<ingredient name="resourceDuctTape" count="1"/>		
+		<ingredient name="resourceCloth" count="6"/>		
+		</recipe>	
+        </append>		
+
+	<!--  Stone Arrow -->
+		<append xpath="/recipes">
+		<recipe name="ammoArrowStone" count="1" craft_time="1" >
+		<ingredient name="resourceRockSmall" count="1"/>
+		<ingredient name="resourceWood" count="1"/>			
+		<ingredient name="resourceCloth" count="1"/>
+		</recipe>	
+        </append>	
+
+	<!--  Iron Arrow -->
+		<append xpath="/recipes">
+		<recipe name="ammoArrowIron" count="1" craft_time="1" >
+		<ingredient name="resourceScrapIron" count="25"/>
+		<ingredient name="resourceWood" count="1"/>
+		<ingredient name="resourceFeather" count="1"/>
+		</recipe>	
+        </append>
+
+	<!--  Repair kit -->
+		<append xpath="/recipes">
+		<recipe name="resourceRepairKit" count="1" craft_time="12" craft_area="workbench" tags="workbenchCrafting">
+		<ingredient name="resourceLeather" count="4"/>	
+		<ingredient name="resourceDuctTape" count="1"/>
+		<ingredient name="resourceMetalPipe" count="4"/>
+		</recipe>	
+        </append>	
+
+	<!--  Glue -->
+		<append xpath="/recipes">
+		<recipe name="resourceGlue" count="1" craft_time="12" craft_area="campfire" craft_tool="toolCookingPot" >
+		<ingredient name="foodEgg" count="1"/>
+		<ingredient name="foodRottingFlesh" count="3"/>
+		<ingredient name="resourceClayLump" count="10"/>
+		</recipe>	
+        </append>
+
+	<!--  Glue -->
+		<append xpath="/recipes">
+		<recipe name="resourceGlue" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="perkAdvancedEngineering">
+		<ingredient name="resourceBone" count="2"/>
+		<ingredient name="foodRottingFlesh" count="2"/>
+		<ingredient name="resourceClayLump" count="10"/>
+		</recipe>	
+        </append>		
+
+	<!--  Moltov -->		
+		<append xpath="/recipes">
+		<recipe name="thrownAmmoMolotovCocktail" count="1" craft_time="12" craft_area="chemistryStation,learnable">
+    	<ingredient name="resourceCloth" count="2"/>
+		<ingredient name="resourceOil" count="1"/>
+    	<ingredient name="ammoGasCan" count="100"/>
+		</recipe>
+		</append>	
+		
+	<!--  Campfire -->		
+		<append xpath="/recipes">
+		<recipe name="campfire" count="1" craft_time="12">
+		<ingredient name="resourceYuccaFibers" count="20"/>
+		</recipe>
+		</append>	
+
+
+</tumeden>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tumeden>
+
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Loot
+							                                                                                   -->
+    <!-- Eggs in Fridge/bird nest -->   
+		<insertBefore xpath="/lootcontainers/lootgroup[@name='groupFoodCommon']">
+		<lootgroup name="groupColdFridge">
+		<item name="foodEgg"/>
+		</lootgroup>
+		</insertBefore>
+
+		<append xpath="/lootcontainers/lootgroup[@name='groupRefrigerator01']">
+		<item group="groupColdFridge" loot_prob_template="med"/>
+		</append>
+
+		<append xpath="/lootcontainers/lootgroup[@name='groupBirdNest02']">
+		<item name="foodEgg" loot_prob_template="medLow"/>
+		</append>
+	<!--  -->   
+	
+    <!-- Increase BirdNest feather Loot -->
+		<set xpath="/lootcontainers/lootgroup[@name='groupBirdNest01']/item[@name='resourceFeather']/@count">2,8</set>
+		<set xpath="/lootcontainers/lootgroup[@name='groupBirdNest02']/item[@name='resourceFeather']/@count">6,12</set>
+    <!-- -->   
+	
+
+
+		<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Junk Cleanup
+							                                                                                   -->
+
+
+    <!-- Destroy trash on pickup -->	 
+		<insertAfter xpath="//lootcontainer[@name='mopowerTruck']">
+		<lootcontainer id="239" name="junkTumeden" count="0,2" size="5,3" sound_open="UseActions/open_trashcan" sound_close="UseActions/close_garbage" loot_quality_template="qualBaseTemplate">
+		<item group="groupJunk"/>
+		</lootcontainer>
+		</insertAfter>
+		
+	<!-- Destroy Objects on pickup -->
+		<setattribute xpath="//lootcontainer[@name='purse']" name="destroy_on_close">true</setattribute>
+		<setattribute xpath="//lootcontainer[@name='laundryBasket']" name="destroy_on_close">true</setattribute>
+		<setattribute xpath="//lootcontainer[@name='shoes']" name="destroy_on_close">true</setattribute>
+		<setattribute xpath="//lootcontainer[@name='bookPile']" name="destroy_on_close">true</setattribute>
+		<setattribute xpath="//lootcontainer[@name='junk']" name="destroy_on_close">true</setattribute>
+        <!-- Disabled for Now - needs more work -	
+		<setattribute xpath="//lootcontainer[@name='cntCardboardBox']" name="destroy_on_close">true</setattribute>	
+		<setattribute xpath="//lootcontainer[@name='cntSportsBag01']" name="destroy_on_close">true</setattribute>	
+		<setattribute xpath="//lootcontainer[@name='cntSportsBag02']" name="destroy_on_close">true</setattribute>	
+		<setattribute xpath="//lootcontainer[@name='cntSuitcase']" name="destroy_on_close">true</setattribute>	
+        -->
+
+</tumeden>

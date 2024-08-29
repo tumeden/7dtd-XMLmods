@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tumeden>
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Base Player Movespeed
+							                                                                                   -->
+	<!-- disabled for now
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CrouchSpeed']/@value">1.0</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='WalkSpeed']/@value">1.1</set>
+	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='RunSpeed']/@value">1.2</set>
+-->
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Zombie Mods
+							                                                                                   -->
+ 	 <!-- Demolition Zombie Modifiers -->
+		<set xpath="/entity_classes/entity_class[@name='zombieDemolition']/property[@name='Explosion.BlockDamage']/@value">500</set> <!-- Default 5000 -->
+		<set xpath="/entity_classes/entity_class[@name='zombieDemolition']/property[@name='ExplodeDelay']/@value">4</set>           <!-- Default 2 -->
+
+	<!-- Adds 25% more headshot damage by player -->
+		<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='DamageModifier' and contains(@tags, 'head')]/@value">1.25</set>
+		<set xpath="/entity_classes/entity_class[@name='zombieTemplateMale']/property[@name='DismemberMultiplierHead']/@value">.4</set>
+
+  	<!-- Scale the Head Damage Modifier based on the Game Difficulty -->
+		<append xpath="/entity_classes/entity_class[@name='playerMale']/effect_group">
+		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="head" >
+		<requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="2"/>
+		</passive_effect>
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="1.25" tags="head" >
+		<requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="3"/>
+		</passive_effect>
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="1.35" tags="head" >
+		<requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="4"/>
+		</passive_effect>
+
+		<passive_effect name="DamageModifier" operation="perc_add" value="1.50" tags="head" >
+		<requirement name="CVarCompare" cvar="_difficulty" operation="Equals" value="5"/>
+		</passive_effect>
+		</append>
+
+
+	<!-- Need list for zombieMutated, zombieMutatedFeral, zombieMutatedRadiated, zombiePartyGirlRadiated, zombieLumberjackRadiated, zombieNurseRadiated, zombieTomClark, zombieTomClarkFeral, zombieTomClarkRadiated, zombieBusinessManRadiated, zombieFatHawaiianRadiated, zombieMaleHazmatFeral, zombieMaleHazmatRadiated -->
+	<!-- zombieBurntFeral NOT ISSUE -->
+	<!-- zombieBurntRadiated NOT ISSUE -->
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Increased Experience/less grind
+							                                                                                   -->	
+
+	<set xpath="/entity_classes/entity_class[starts-with(@name, 'zombieTemplate')]/property[@name='ExperienceGain']/@value">1000</set>
+
+	<set xpath="/entity_classes/entity_class[contains(@name, 'Fat')]/property[@name='ExperienceGain']/@value">1200</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'Feral')]/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[contains(@name, 'Radiated')]/property[@name='ExperienceGain']/@value">2000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieSkateboarder']/property[@name='ExperienceGain']/@value">1200</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSkateboarderFeral']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSkateboarderRadiated']/property[@name='ExperienceGain']/@value">2000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieBiker']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBikerFeral']/property[@name='ExperienceGain']/@value">2000</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieBikerRadiated']/property[@name='ExperienceGain']/@value">2500</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieLumberjack']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieLumberjackFeral']/property[@name='ExperienceGain']/@value">2000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieSoldier']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSoldierFeral']/property[@name='ExperienceGain']/@value">2000</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieSoldierRadiated']/property[@name='ExperienceGain']/@value">2500</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCop']/property[@name='ExperienceGain']/@value">2000</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCopFeral']/property[@name='ExperienceGain']/@value">2500</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieFatCopRadiated']/property[@name='ExperienceGain']/@value">3000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieDemolition']/property[@name='ExperienceGain']/@value">5000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='zombieWightFeral']/property[@name='ExperienceGain']/@value">3000</set>
+	<set xpath="/entity_classes/entity_class[@name='zombieWightRadiated']/property[@name='ExperienceGain']/@value">5000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateTimid']/property[@name='ExperienceGain']/@value">500</set>
+	<set xpath="/entity_classes/entity_class[@name='animalTemplateHostile']/property[@name='ExperienceGain']/@value">1000</set>
+
+	<set xpath="/entity_classes/entity_class[@name='animalChicken']/property[@name='ExperienceGain']/@value">200</set>
+	<set xpath="/entity_classes/entity_class[@name='animalRabbit']/property[@name='ExperienceGain']/@value">200</set>
+	<set xpath="/entity_classes/entity_class[@name='animalStag']/property[@name='ExperienceGain']/@value">500</set>
+
+	<set xpath="/entity_classes/entity_class[@name='animalCoyote']/property[@name='ExperienceGain']/@value">300</set>
+	<set xpath="/entity_classes/entity_class[@name='animalSnake']/property[@name='ExperienceGain']/@value">250</set>
+
+
+	<set xpath="/entity_classes/entity_class[@name='animalBear']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='animalZombieBear']/property[@name='ExperienceGain']/@value">2000</set>
+	<set xpath="/entity_classes/entity_class[@name='animalDireWolf']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='animalZombieVultureRadiated']/property[@name='ExperienceGain']/@value">1500</set>
+	<set xpath="/entity_classes/entity_class[@name='animalBossGrace']/property[@name='ExperienceGain']/@value">5000</set>
+
+</tumeden>

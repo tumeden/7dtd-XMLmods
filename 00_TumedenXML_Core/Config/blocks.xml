@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tumeden>
+		<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Loot
+							                                                                                   -->
+		
+		<!-- Better tree drops -->		
+			<append xpath="/blocks/block[@name='treeMaster']" >
+				<drop event="Destroy" name="resourceFeather" prob=".01875" count="1,15"/>
+				<drop event="Destroy" name="foodHoney" prob=".0025" count="1,3"/>
+				<drop event="Destroy" name="foodEgg" prob=".002625" count="1,3"/>
+			</append>
+		<!-- Replaces wood with honey in stumps -->
+			<remove xpath="blocks/block[@name='treeStump']/drop[@name='resourceWood']"/>
+			<append xpath="/blocks/block[@name='treeStump']" >	
+				<drop event="Harvest" name="foodHoney" count="1,4" tag="oreWoodHarvest"/>
+				<drop event="Harvest" name="resourceWood" count="5,12" tag="oreWoodHarvest"/>
+			</append>
+		<!-- Broken vending machine loot -->	
+			<append xpath="/blocks/block[@name='cntVendingMachine2Broken']">
+				<drop event="Harvest" name="casinoCoin" count="5,30" tag="salvageHarvest"/>	
+				<drop event="Harvest" name="oldCash" count="1,10" tag="salvageHarvest"/>			
+			</append>
+			
+    <!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Crop Growth
+							                                                                                   -->
+	<!-- Set crop growth rate.  Default value is 63 minutes-->
+		<set xpath="blocks/block[@name='cropsGrowingMaster']/property[@name='PlantGrowing.GrowthRate']/@value">36</set>
+	<!-- Remove light requirement for growth -->
+		<setattribute xpath="/blocks/block[@name='cropsGrowingMaster']" name="PlantGrowing.LightLevelStay">0</setattribute>
+	    <setattribute xpath="/blocks/block[@name='cropsGrowingMaster']" name="PlantGrowing.LightLevelGrow">0</setattribute>
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Buffs
+							                                                                                   -->
+		<!-- Heal on Sleeping bag -->
+		<append xpath="/blocks/block[@name='bedroll']">
+			<property name="BuffsWhenWalkedOn" value="buffHealHealth"/>
+		</append>
+
+    
+    <!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Movement Speed changes
+							                                                                                   -->
+
+		<!-- Change PLAYER Movement speed based on terrain -->
+		<!--Sand -->
+			<append xpath="/blocks/block[@name='terrSand']">
+				<property name="MovementFactor" value=".8"/>
+			</append>
+		<!--Sandstone -->
+			<append xpath="/blocks/block[@name='terrSandStone']">
+				<property name="MovementFactor" value="1.0"/>
+			</append>	
+		<!--Top Soil -->
+			<append xpath="/blocks/block[@name='terrTopSoil']">
+				<property name="MovementFactor" value="1.15"/>
+			</append>						
+		<!--Snow -->
+			<append xpath="/blocks/block[@name='terrSnow']">
+				<property name="MovementFactor" value=".8"/>
+			</append>
+		<!--Bedrock -->
+			<append xpath="/blocks/block[@name='terrBedrock']">
+				<property name="MovementFactor" value="1.05"/>
+			</append>
+		<!--Desert .9-->
+			<append xpath="/blocks/block[@name='terrDesertGround']">
+				<property name="MovementFactor" value=".9"/>
+			</append>
+		<!--Asphalt 1.35-->
+			<append xpath="/blocks/block[@name='terrAsphalt']">
+				<property name="MovementFactor" value="1.45"/>
+			</append>
+		<!--Gravel -->
+			<append xpath="/blocks/block[@name='terrGravel']">
+				<property name="MovementFactor" value="1.1"/>
+			</append>
+		<!--Burnt Forest -->
+			<append xpath="/blocks/block[@name='terrBurntForestGround']">
+				<property name="MovementFactor" value=".95"/>
+			</append>
+		<!--Destroyed Stone -->
+			<append xpath="/blocks/block[@name='terrDestroyedStone']">
+				<property name="MovementFactor" value=".92"/>
+			</append>
+		<!--Concrete -->
+			<append xpath="/blocks/block[@name='terrConcrete']">
+				<property name="MovementFactor" value="1.15"/>
+			</append>
+		<!--Sidewalk - broken right now
+			<append xpath="/blocks/block[@name='terrSidewalk']">
+				<property name="MovementFactor" value="1.15"/>
+			</append>	-->
+		<!-- -->			
+
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Reduces Heatmap (less annoying screamers)
+							                                                                                   -->
+	<!-- Strength: The Percentage of heat an event will contribute (when made from this block). -->
+	<!-- Frequency: The time,or Number of 'ticks', between heat event creations. -->  
+	<!-- Lifetime: The time,or Number of 'ticks', until an event expires. -->
+
+	<!-- campfire -->
+	<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapStrength']/@value">.5</set> <!-- campfire heatmapstrength; original value 5 -->
+	<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapTime']/@value">5000</set> <!-- campfire HeatMapTime; original value 5000 -->
+	<set xpath="/blocks/block[@name='campfire']/property[@name='HeatMapFrequency']/@value">1000</set> <!-- campfire HeatMapFrequency; original value 1000 -->
+
+	<!-- forge -->
+	<set xpath="/blocks/block[@name='forge']/property[@name='HeatMapStrength']/@value">.6</set> <!-- campfire heatmapstrength; original value 6 -->
+	<set xpath="/blocks/block[@name='forge']/property[@name='HeatMapTime']/@value">5000</set> <!-- campfire HeatMapTime; original value 5000 -->
+	<set xpath="/blocks/block[@name='forge']/property[@name='HeatMapFrequency']/@value">1000</set> <!-- campfire HeatMapFrequency; original value 1000 -->
+
+	<!-- workbench -->
+	<set xpath="/blocks/block[@name='workbench']/property[@name='HeatMapStrength']/@value">.2</set> <!-- campfire heatmapstrength; original value 2 -->
+	<set xpath="/blocks/block[@name='workbench']/property[@name='HeatMapTime']/@value">5000</set> <!-- campfire HeatMapTime; original value 5000 -->
+	<set xpath="/blocks/block[@name='workbench']/property[@name='HeatMapFrequency']/@value">1000</set> <!-- campfire HeatMapFrequency; original value 1000 -->
+
+	<!-- cementMixer -->
+	<set xpath="/blocks/block[@name='cementMixer']/property[@name='HeatMapStrength']/@value">.2</set> <!-- campfire heatmapstrength; original value 2 -->
+	<set xpath="/blocks/block[@name='cementMixer']/property[@name='HeatMapTime']/@value">5000</set> <!-- campfire HeatMapTime; original value 5000 -->
+	<set xpath="/blocks/block[@name='cementMixer']/property[@name='HeatMapFrequency']/@value">1000</set> <!-- campfire HeatMapFrequency; original value 1000 -->
+
+	<!-- chemistryStation -->
+	<set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapStrength']/@value">.5</set> <!-- campfire heatmapstrength; original value 5 -->
+	<set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapTime']/@value">5000</set> <!-- campfire HeatMapTime; original value 5000 -->
+	<set xpath="/blocks/block[@name='chemistryStation']/property[@name='HeatMapFrequency']/@value">1000</set> <!-- campfire HeatMapFrequency; original value 1000 -->
+
+	<!-- wallTorchLightPlayer --> <!-- HeatMapFrequency is not used. 1 min realtime updates that scale to match world time rate -->
+	<set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapStrength']/@value">.1</set> <!-- campfire heatmapstrength; original value 1 -->
+	<set xpath="/blocks/block[@name='wallTorchLightPlayer']/property[@name='HeatMapTime']/@value">4000</set> <!-- campfire HeatMapTime; original value 4000 -->
+
+	<!-- candleWallLightPlayer --> <!-- HeatMapFrequency is not used. 1 min realtime updates that scale to match world time rate -->
+	<set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapStrength']/@value">.05</set> <!-- campfire heatmapstrength; original value .5 -->
+	<set xpath="/blocks/block[@name='candleWallLightPlayer']/property[@name='HeatMapTime']/@value">4000</set> <!-- campfire HeatMapTime; original value 4000 -->
+
+	<!-- burningBarrelPlayer --> <!-- HeatMapFrequency is not used. 1 min realtime updates that scale to match world time rate -->
+	<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapStrength']/@value">.1</set> <!-- campfire heatmapstrength; original value 1 -->
+	<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapTime']/@value">4000</set> <!-- campfire HeatMapTime; original value 4000 -->
+	
+</tumeden>

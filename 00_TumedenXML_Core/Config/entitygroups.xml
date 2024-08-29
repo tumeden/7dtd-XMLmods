@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tumeden>
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Zombie stuff
+							                                                                                   -->
+
+
+		<!-- Remove Screamers #disabled for now
+	<remove xpath="/entitygroups/entitygroup[@name='ZombieScouts']"></remove>
+	<remove xpath="/entitygroups/entitygroup[contains(@name,'Horde')]/entity[@name='zombieScreamer' or @name='zombieScreamerFeral' or @name='zombieScreamerRadiated']"></remove>
+-->
+
+
+
+</tumeden>
