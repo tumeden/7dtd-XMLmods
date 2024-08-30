@@ -161,31 +161,5 @@
 	<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapStrength']/@value">.1</set> <!-- campfire heatmapstrength; original value 1 -->
 	<set xpath="/blocks/block[@name='burningBarrelPlayer']/property[@name='HeatMapTime']/@value">4000</set> <!-- campfire HeatMapTime; original value 4000 -->
 	
-	<!-- 
-	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-						Disable tree falling animation
-							                                                                                   -->
-		<append xpath="/blocks/block[(starts-with(@name, 'treeMountainPine') or @name='treeFirLrg01') and not (contains(@name, 'Sapling') or contains(@name, 'RandomHelper'))]">
-			<property name="FallOver" value="false"/>
-			<property name="DowngradeBlock" value="treeMountainPineSapling"/>
-		</append>
 
-		<append xpath="/blocks/block[starts-with(@name, 'treeOak') and not (contains(@name, 'Sapling') or contains(@name, 'RandomHelper'))]">
-			<property name="FallOver" value="false"/>
-			<property name="DowngradeBlock" value="treeOakSapling"/>
-		</append>
-
-		<append xpath="/blocks/block[starts-with(@name, 'treeWinter') and not (contains(@name, 'Sapling') or contains(@name, 'RandomHelper'))]">
-			<property name="FallOver" value="false"/>
-			<property name="DowngradeBlock" value="treeWinterPineSapling"/>
-		</append>
-
-		<append xpath="/blocks/block[(starts-with(@name, 'treeBurnt') or starts-with(@name, 'treeDeadTree') or starts-with(@name, 'treePineBurnt') or @name='treeMountainPineDry21m') and not (contains(@name, 'Sapling') or contains(@name, 'RandomHelper'))]">
-			<property name="FallOver" value="false"/>
-		</append>
-
-		<append xpath="/blocks/block[(starts-with(@name, 'treeCactus') and not (contains(@name, 'Sapling') or contains(@name, 'RandomHelper')))]">
-			<property name="FallOver" value="false"/>
-			<property name="DowngradeBlock" value="treeCactusSapling"/>
-		</append>	
 </tumeden>
