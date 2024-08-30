@@ -1,4 +1,130 @@
-<Configs>
+<?xml version="1.0" encoding="utf-8"?>
+<tumeden>
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Time Changes
+							                                                                                   -->	
+
+	<!-- Faster crafting of sand and cement -->
+		<append xpath="/items/item[@name='resourceCrushedSand']">
+		<property name="CraftingIngredientTime" value="0.1" />
+		</append>
+		<append xpath="/items/item[@name='resourceCement']">
+		<property name="CraftingIngredientTime" value="0.5" />
+		</append>
+
+	<!-- Melting time -->
+		<set xpath="/items/item[@name='unit_iron']/property[@name='MeltTimePerUnit']/@value">0.05</set>
+		<set xpath="/items/item[@name='toolBellows']/effect_group/passive_effect[@name='CraftingSmeltTime']/@value">-.5</set>
+	
+	
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Salvaging
+							                                                                                   -->
+
+	<!-- Faster Ratchet salvage-->
+		<set xpath="items/item[@name='meleeToolSalvageT2Ratchet']/effect_group[@name='meleeToolSalvageT2Ratchet']/passive_effect[@name='AttacksPerMinute']/@value">70</set>
+	<!-- Impact Driver salvage-->
+		<set xpath="items/item[@name='meleeToolSalvageT3ImpactDriver']/effect_group[@name='meleeToolSalvageT3ImpactDriver']/passive_effect[@name='AttacksPerMinute']/@value">80</set>
+		<set xpath="items/item[@name='meleeToolSalvageT3ImpactDriver']/effect_group[@name='meleeToolSalvageT3ImpactDriver']/passive_effect[@name='StaminaLoss']/@value">10.5</set>
+	
+
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Remove explosion damage to blocks.
+							                                                                                   -->
+
+	<append xpath="/items/item[@name='thrownDynamite']">
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkDemolitionsExpert"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="550" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="0"/>
+		<display_value name="dFuseTime" value="4"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='thrownTimedCharge']">
+	<effect_group tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkDemolitionsExpert"/>
+			<display_value name="dExDamageBlock" value="0"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="100" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="0"/>
+		<display_value name="dFuseTime" value="4"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='ammoRocketHE']">
+	<effect_group name="ammoRocketHE" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkDemolitionsExpert"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="420" tags="perkDemolitionsExpert"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="0"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='ammoRocketFrag']">
+	<effect_group name="ammoRocketFrag" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkDemolitionsExpert"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="700" tags="perkDemolitionsExpert"/>
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="50" tags="perkDemolitionsExpert"/>
+		<display_value name="dExRadius" value="0"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='ammoShotgunBreachingSlug']">
+		<effect_group name="ammoShotgunBreachingSlug" tiered="false">
+			<passive_effect name="EntityDamage" operation="base_set" value="96" tags="perkBoomstick"/>
+			<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkBoomstick"/>
+			<passive_effect name="BlockDamage" operation="base_add" value="0" tags="door,wood"/>
+				<display_value name="dDamageDoor" value="0"/>
+			<passive_effect name="RoundRayCount" operation="base_set" value="1" tags="perkBoomstick"/>
+			<passive_effect name="MaxRange" operation="base_set" value="4" tags="perkBoomstick"/>
+			<passive_effect name="DamageFalloffRange" operation="base_set" value="2" tags="perkBoomstick"/>
+			<passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.4" tags="perkBoomstick"/>
+			<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.4" tags="perkBoomstick"/>
+			<passive_effect name="SpreadMultiplierAiming" operation="perc_add" value="-.35" tags="perkBoomstick"/>
+			<passive_effect name="SpreadMultiplierCrouching" operation="perc_add" value="-.05" tags="perkBoomstick"/>
+			<passive_effect name="SpreadMultiplierWalking" operation="perc_add" value=".15" tags="perkBoomstick"/>
+			<passive_effect name="SpreadMultiplierRunning" operation="perc_add" value=".3" tags="perkBoomstick"/>
+			<passive_effect name="DamageModifier" operation="perc_add" value="-.8" tags="earth"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='ammoCrossbowBoltExploding']">
+	<effect_group name="ammoCrossbowBoltExploding" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkArchery"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="250" tags="perkArchery"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="-.1" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,water"/>
+		
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="45" tags="perkArchery"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+		<display_value name="dExRadius" value="0"/>
+	</effect_group>
+	</append>
+	
+	<append xpath="/items/item[@name='ammoArrowExploding']">
+	<effect_group name="ammoArrowExploding" tiered="false">
+		<passive_effect name="BlockDamage" operation="base_set" value="0" tags="perkArchery"/>
+		<passive_effect name="EntityDamage" operation="base_set" value="180" tags="perkArchery"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="-.5" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="-.1" tags="wood"/>
+		<passive_effect name="DamageModifier" operation="perc_set" value="0" tags="earth,water"/>
+		
+		<passive_effect name="ProjectileVelocity" operation="base_set" value="40" tags="perkArchery"/>
+		<passive_effect name="ProjectileStickChance" operation="perc_set" value="0"/>
+		<display_value name="dExRadius" value="0"/>
+	</effect_group>
+	</append>
+
+	<!-- 
+	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+						Spear range increase slightly.
+							                                                                                   -->
+
 
 	<set xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/property[@class='Action0']/property[@name='Range']/@value">2.9</set>
 	<set xpath="/items/item[@name='meleeWpnSpearT0StoneSpear']/property[@class='Action1']/property[@name='Range']/@value">2.9</set>
@@ -46,5 +172,33 @@
 			</property>
 		</property>
     </append>
-	
-</Configs>
+
+
+
+</tumeden>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

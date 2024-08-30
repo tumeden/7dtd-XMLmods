@@ -1,0 +1,18 @@
+<config>
+  <set xpath="/vehicles/vehicle[@name='vehicleBicycle']/property[@name='velocityMax_turbo']/@value">8, 5, 11, 5</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleBicycle']/property[@name='motorTorque_turbo']/@value">667, 240, 1000, 240</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleBicycle']/property[@name='brakeTorque']/@value">5333</set>
+
+  <set xpath="/vehicles/vehicle[@name='vehicleTruck4x4']/property[@name='velocityMax_turbo']/@value">13, 11, 19, 13</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleTruck4x4']/property[@name='motorTorque_turbo']/@value">4667, 2000, 6000, 2667</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleTruck4x4']/property[@name='brakeTorque']/@value">10667</set>
+
+  <set xpath="/vehicles/vehicle[@name='vehicleMotorcycle']/property[@name='velocityMax_turbo']/@value">13, 8, 19, 11</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleMotorcycle']/property[@name='motorTorque_turbo']/@value">1867, 667, 2800, 867</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleMotorcycle']/property[@name='brakeTorque']/@value">5333</set>
+
+  <set xpath="/vehicles/vehicle[@name='vehicleMinibike']/property[@name='velocityMax_turbo']/@value">12, 8, 15, 8</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleMinibike']/property[@name='motorTorque_turbo']/@value">533, 267, 467, 267</set>
+  <set xpath="/vehicles/vehicle[@name='vehicleMinibike']/property[@name='brakeTorque']/@value">5333</set>
+
+</config>
